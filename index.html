@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Secure GenAI - Subscribe Now</title>
-    <meta name="description" content="Secured GenAI is dedicated to cyber security for GenAI systems with reviews, knowledge, and practices.">
+    <meta name="description"
+        content="Secured GenAI is dedicated to cyber security for GenAI systems with reviews, knowledge, and practices.">
     <link rel="icon" type="image/svg+xml" href="
         data:image/svg+xml,
         <svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'>
             <circle cx='16' cy='16' r='16' fill='%2344d58a'/>
-        </svg>"
-    >
+        </svg>">
 
     <style>
         body {
@@ -19,63 +20,116 @@
             margin: 0;
             padding: 0;
         }
+
         .container {
             width: 80%;
             margin: auto;
             overflow: hidden;
         }
+
         nav {
             background: #ffffff;
             padding: 1rem;
             display: flex;
             justify-content: space-between;
         }
+
         nav a {
             padding: 0.5rem 1rem;
             text-decoration: none;
             color: #333;
         }
+
         .section {
             padding: 2rem 0;
         }
+
         .logo {
             width: 200px;
             height: auto;
             /* margin-bottom: auto; */
         }
+
         .nav-links {
             display: flex;
             gap: 20px;
         }
+
         .home-content {
             display: flex;
             align-items: center;
             gap: 2rem;
         }
+
         .home-text {
             flex: 1;
         }
+
         .subscription-box {
             flex: 1;
             background: #fff;
             padding: 1rem;
         }
+
         .book-preview {
             background: #e7e7e7;
             padding: 1rem;
             margin: 1rem 0;
         }
+
+        .faq-container {
+            max-width: 1200px;
+            /* margin: 0 auto; */
+        }
+
+        .faq-item {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            font-weight: bold;
+            padding: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer {
+            padding: 0 1rem 1rem;
+            display: none;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
         .social-links {
             background: #44d58a;
             color: #fff;
             padding: 1rem;
             text-align: center;
         }
+
         .social-links a {
             color: #353535;
             margin: 0 0.5rem;
             text-decoration: none;
         }
+
         @media (max-width: 768px) {
             .home-content {
                 flex-direction: column;
@@ -87,7 +141,8 @@
     <meta property="og:title" content="Secure GenAI - Job Zero starts from Day 1!">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://securegenai.githuh.io">
-    <meta property="og:description" content="Stay updated with the latest news and updates on GenAI safety and security.">
+    <meta property="og:description"
+        content="Stay updated with the latest news and updates on GenAI safety and security.">
 
     <!-- Optional but recommended Open Graph tags -->
     <meta property="og:site_name" content="Secure GenAI">
@@ -105,22 +160,25 @@
 
     <script>
         if ('serviceWorker' in navigator) {
-            window.addEventListener('load', function() {
-                navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+            window.addEventListener('load', function () {
+                navigator.serviceWorker.register('/service-worker.js').then(function (registration) {
                     console.log('Service Worker registered with scope:', registration.scope);
-                }, function(error) {
+                }, function (error) {
                     console.log('Service Worker registration failed:', error);
                 });
             });
         }
     </script>
 </head>
+
 <body>
     <nav>
         <svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 50" fill="none">
-            <circle cx="25" cy="25" r="20" fill="#14FD7F"/>
-            <text x="60" y="42" font-family="Arial, sans-serif" font-size="50" font-weight="normal" fill="#7C7C7C">SECURE</text>
-            <text x="280" y="45" font-family="Arial, sans-serif" font-size="54" font-weight="bold" fill="#7C7C7C">GenAI</text>
+            <circle cx="25" cy="25" r="20" fill="#14FD7F" />
+            <text x="60" y="42" font-family="Arial, sans-serif" font-size="50" font-weight="normal"
+                fill="#7C7C7C">SECURE</text>
+            <text x="280" y="45" font-family="Arial, sans-serif" font-size="54" font-weight="bold"
+                fill="#7C7C7C">GenAI</text>
         </svg>
         <div class="nav-links">
             <a href="#home">Home</a>
@@ -135,39 +193,37 @@
             <div class="home-content">
                 <div class="home-text">
                     <h1>Job Zero starts from Day 1!</h1>
-                    <p>Join our newsletter and stay updated with the latest news and update on GenAI safety and security.</p>
+                    <p>Join our newsletter and stay updated with the latest news and update on GenAI safety and
+                        security.</p>
                 </div>
                 <div class="subscription-box">
-                    <iframe
-                        src="https://securedgenai.substack.com/embed"
-                        width="480"
-                        height="320"
-                        style="border: none; max-width: 100%;"
-                        title="Subscription box"
-                    ></iframe>
+                    <iframe src="https://securedgenai.substack.com/embed" width="480" height="320"
+                        style="border: none; max-width: 100%;" title="Subscription box"></iframe>
                 </div>
         </section>
 
         <section id="about" class="section">
             <h2>About Secure GenAI </h2>
-            <p>Secured GenAI is a website dedicated to cyber security for GenAI system with review, knowledge and practices.  </p>
-            <p>Through our newsletter, and educational resources, we aim to help you catch up with the evolving landscape of threats. </p>
+            <p>Secured GenAI is a website dedicated to cyber security for GenAI system with review, knowledge and
+                practices. </p>
+            <p>Through our newsletter, and educational resources, we aim to help you catch up with the evolving
+                landscape of threats. </p>
         </section>
 
         <section id="free-book" class="section">
             <h2>Is AI a force for good or a potential threat? </h2>
             <div class="book-preview">
-                <p>Learn about AI hallucinations, adversarial attacks, the need for regulation, and how to build secure AI systems.</p>
+                <p>Learn about AI hallucinations, adversarial attacks, the need for regulation, and how to build secure
+                    AI systems.</p>
                 <ul>
                     <li>Latest updates for an evolving threat landscape first half, 2024.</li>
                     <li>11 Chapters, 47 pages from OpenAI, Microsoft, Google, AWS and more.</li>
                     <li>Learn about AI hallucinations, adversarial attacks, and AI regulation.</li>
                 </ul>
-                <p><a href="https://securedgenai.substack.com/p/free-e-book-genai-safety-and-security"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Learn more about the free e-book on GenAI safety and security. Opens in a new tab"
-                    >GenAI safety and security, Q1&2, 2024
+                <p><a href="https://securedgenai.substack.com/p/free-e-book-genai-safety-and-security" target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Learn more about the free e-book on GenAI safety and security. Opens in a new tab">GenAI
+                        safety and security, Q1&2, 2024
                     </a>
                 </p>
                 <p>Subscribe to our newsletter to receive your free copy!</p>
@@ -179,22 +235,18 @@
             <div class="blog-post">
                 <h3>Compliances and Data privacy: AWS GenAI security scoping matrix.</h3>
                 <p>Use the scope to nail your story & an example of
-                    <a href="https://securedgenai.substack.com/p/compliances-and-data-privacy-aws"
-                        target="_blank"
-                        rel="nooperner nonreferer"
-                        aria-label="Read more about Compliances and Data Privacy"
-                        >auditing with GenAI.
+                    <a href="https://securedgenai.substack.com/p/compliances-and-data-privacy-aws" target="_blank"
+                        rel="nooperner nonreferer" aria-label="Read more about Compliances and Data Privacy">auditing
+                        with GenAI.
                     </a>
                 </p>
             </div>
             <div class="blog-post">
                 <h3>Amazon security tech stack with RAG</h3>
                 <p>How to secure an end-to-end
-                    <a href="https://securedgenai.substack.com/p/amazon-security-tech-stack-with-rag"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        arial-label="Read more Amazon Security Tech stack with Rag"
-                        > GenAI on the cloud with AWS...
+                    <a href="https://securedgenai.substack.com/p/amazon-security-tech-stack-with-rag" target="_blank"
+                        rel="noopener noreferrer" arial-label="Read more Amazon Security Tech stack with Rag"> GenAI on
+                        the cloud with AWS...
                     </a>
                 </p>
             </div>
@@ -202,43 +254,62 @@
             <div class="Best Practices for GenAI safety and security">
                 <h3>Resources</h3>
                 <p> A comprehensive
-                    <a href="https://github.com/securegenai/resources"
-                        target="_blank"
-                        rel="nonopener noreferrer"
-                        arial-label="Read more about best practices"
-                    > guide
+                    <a href="https://github.com/securegenai/resources" target="_blank" rel="nonopener noreferrer"
+                        arial-label="Read more about best practices"> guide
                     </a>
                     to help you learn about GenAI safety and security.
                 </p>
             </div>
         </section>
 
+        <section id="faq">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">What is GenAI safety and security?</div>
+                    <div class="faq-answer">GenAI safety and security refers to the practices and technologies used to protect
+                        generative AI systems from threats and vulnerabilities with defend mindset. Here we highlight the safety
+                        first for users and their beneficial including indentify, data protection and psychology. </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">How often is your newsletter published?</div>
+                    <div class="faq-answer">Our newsletter is published weekly with technical review, providing you with timely updates
+                        on the latest developments in GenAI security. Each issue contains expert analysis, practical tips,
+                        and industry insights.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Can I request specific topics for your blog or newsletter?</div>
+                    <div class="faq-answer">Absolutely! We welcome topic suggestions from our community. Please use the
+                        contact form in our footer to submit your ideas. Our team reviews all suggestions and strives to
+                        address the most relevant and pressing issues in GenAI security.</div>
+                </div>
+            </div>
+        </section>
+
         <footer class="footer">
             <div class="social-links">
-                <a href="https://x.com/emmaphuongng"
-                    target="_blank"
-                    aria-label="Visit x"
-                    >Twitter
+                <a href="https://x.com/emmaphuongng" target="_blank" aria-label="Visit x">Twitter
                 </a>
-                <a href="https://www.linkedin.com/in/mphuongn/"
-                    target="_blank"
-                    aria-label="Visit linkedin"
-                    >LinkedIn
+                <a href="https://www.linkedin.com/in/mphuongn/" target="_blank" aria-label="Visit linkedin">LinkedIn
                 </a>
-                <a href="https://github.com/securegenai"
-                    target="_blank"
-                    aria-label="Visit Emma Phuong's github"
-                    >Github
+                <a href="https://github.com/securegenai" target="_blank" aria-label="Visit Emma Phuong's github">Github
                 </a>
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSfPaQkDnZiqGD1IXIJRgxB3fUsqYPXgqKWCjkIyFkhxhW9gHw/viewform?usp=sf_link"
-                    target="_blank"
-                    aria-label="Visit contact page"
-                    >Contact
+                    target="_blank" aria-label="Visit contact page">Contact
                 </a>
             </div>
         </footer>
     </div>
 
+    <script>
+        // FAQ Functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentNode;
+                item.classList.toggle('active');
+            });
+        });
+    </script>
 </body>
-</html>
 
+</html>
