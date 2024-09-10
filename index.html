@@ -106,10 +106,45 @@
             padding: 1.5rem;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        } 2024/08/29, Ho Chi Minh: 2push,post, 0 review, 1 app, 0 illustration, 10' clean.
+        }
 
         .feature-card:hover {
             transform: translateY(-5px);
+        }
+
+        #testimonials {
+            background-color: #f9f9f9;
+            padding: 40px 0;
+            text-align: center;
+        }
+        .testimonial-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        .testimonial {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 10px;
+            width: calc(33% - 20px);
+            min-width: 250px;
+        }
+        .testimonial img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+        .testimonial p {
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+        .testimonial .name {
+            font-weight: bold;
+            color: #14FD7F;
         }
 
         .faq-container {
@@ -170,6 +205,7 @@
                 flex-direction: column;
             }
         }
+
     </style>
 
     <!-- Basic Open Graph tags -->
@@ -373,6 +409,27 @@
                         </a>
                         for securing and responsibly using generative AI.
                     </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="section">
+            <h2>What Our Readers Say</h2>
+            <div class="testimonial-container">
+                <div class="testimonial">
+                    <p>"Hi Emma. Good luck with your work!"</p>
+                    <div class="name">Micheal</div>
+                    <div>CTO, an AI testing startup</div>
+                </div>
+                <div class="testimonial">
+                    <p>"I've really enjoyed reading your post - you've done some great work there. I'll certainly reach out to you for anything related to AI compliance and governance, as I'll be spending more time in these areas in the coming months."</p>
+                    <div class="name">Joe</div>
+                    <div>CTO, an applied AI startup</div>
+                </div>
+                <div class="testimonial">
+                    <p>"Thank you for sharing Emma, and all the best!"</p>
+                    <div class="name">Vijay</div>
+                    <div>Director, AI policy of a bank</div>
                 </div>
             </div>
         </section>
