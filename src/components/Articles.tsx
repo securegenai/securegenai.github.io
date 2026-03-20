@@ -1,4 +1,3 @@
-import React from 'react';
 import { Calendar, Clock, ArrowRight } from 'lucide-react';
 
 const Articles = () => {
@@ -35,30 +34,42 @@ const Articles = () => {
   return (
     <section id="articles" className="py-20 bg-gray-50">
       <div className="max-w-6xl mx-auto px-4">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 fade-in">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Latest Safety Intelligence
           </h2>
-          <p className="text-xl text-gray-600">
-            Preview the depth and quality of AI safety content you'll receive weekly
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Cutting-edge research and analysis on emerging GenAI security threats, vulnerabilities, and defense strategies from leading experts worldwide.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 stagger-children">
           {articles.map((article, index) => (
             <a
               key={index}
               href={article.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group cursor-pointer block"
+              aria-label={`Read article: ${article.title} - ${article.excerpt}`}
+              className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group cursor-pointer block card-hover"
             >
               <div className="relative overflow-hidden">
-                <img
-                  src={article.image}
-                  alt={article.title}
-                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                />
+                <picture>
+                  <source 
+                    srcSet={article.image.replace('.png', '.webp')} 
+                    type="image/webp"
+                  />
+                  <img
+                    src={article.image}
+                    alt={article.title}
+                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300 image-hover"
+                    loading="lazy"
+                    decoding="async"
+                    width="400"
+                    height="192"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  />
+                </picture>
                 <div className="absolute top-4 left-4">
                   <span className="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-medium">
                     {article.category}
@@ -96,6 +107,7 @@ const Articles = () => {
             href="https://securedgenai.substack.com/"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="View all intelligence reports on Secure GenAI Substack"
             className="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-200 inline-flex items-center gap-2 group"
           >
             View All Intelligence Reports

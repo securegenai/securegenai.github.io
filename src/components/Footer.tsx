@@ -1,9 +1,8 @@
-import React from 'react';
-import { Shield, Twitter, Linkedin, Globe } from 'lucide-react';
+import { Twitter, Linkedin, Globe } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer id="contact" className="bg-gray-900 text-white py-12">
+    <footer aria-label="Site footer" id="contact" className="bg-gray-900 text-white py-12">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center">
           <div className="inline-flex items-center justify-center w-12 h-12 bg-green-500 rounded-full mb-6">
@@ -16,13 +15,13 @@ const Footer = () => {
           </p>
 
           <div className="flex justify-center space-x-6 mb-8">
-            <a href="#" className="p-3 bg-gray-800 rounded-full hover:bg-gray-700 transition-colors duration-200">
+            <a href="#" aria-label="Follow on Twitter" className="p-3 bg-gray-800 rounded-full hover:bg-gray-700 transition-colors duration-200">
               <Twitter className="w-5 h-5" />
             </a>
-            <a href="#" className="p-3 bg-gray-800 rounded-full hover:bg-gray-700 transition-colors duration-200">
+            <a href="#" aria-label="Connect on LinkedIn" className="p-3 bg-gray-800 rounded-full hover:bg-gray-700 transition-colors duration-200">
               <Linkedin className="w-5 h-5" />
             </a>
-            <a href="#" className="p-3 bg-gray-800 rounded-full hover:bg-gray-700 transition-colors duration-200">
+            <a href="#" aria-label="Visit website" className="p-3 bg-gray-800 rounded-full hover:bg-gray-700 transition-colors duration-200">
               <Globe className="w-5 h-5" />
             </a>
           </div>
@@ -31,9 +30,9 @@ const Footer = () => {
             <p className="text-gray-400 text-sm">
               © 2025 Secure GenAI. All rights reserved. 
               <span className="mx-2">•</span>
-              <a href="#" className="hover:text-white transition-colors duration-200">Privacy Policy</a>
+              <a href="/privacy-policy.html" className="hover:text-white transition-colors duration-200">Privacy Policy</a>
               <span className="mx-2">•</span>
-              <a href="#" className="hover:text-white transition-colors duration-200">Terms of Service</a>
+              <a href="/terms-of-service.html" className="hover:text-white transition-colors duration-200">Terms of Service</a>
             </p>
           </div>
         </div>

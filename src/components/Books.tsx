@@ -1,4 +1,3 @@
-import React from 'react';
 import { BookOpen, Star, ExternalLink } from 'lucide-react';
 import frame1Image from '../images/Frame 1.png';
 import frame2Image from '../images/Frame 2.png';
@@ -95,11 +94,22 @@ const Books = () => {
               className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group border border-gray-100"
             >
               <div className="relative overflow-hidden">
-                <img
-                  src={book.image}
-                  alt={book.title}
-                  className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
-                />
+                <picture>
+                  <source 
+                    srcSet={book.image.replace('.png', '.webp')} 
+                    type="image/webp"
+                  />
+                  <img
+                    src={book.image}
+                    alt={book.title}
+                    className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300 image-hover"
+                    loading="lazy"
+                    decoding="async"
+                    width="300"
+                    height="256"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  />
+                </picture>
                 <div className="absolute top-4 left-4">
                   <span className={`px-3 py-1 rounded-full text-sm font-medium ${getCategoryColor(book.category)}`}>
                     {book.category}
