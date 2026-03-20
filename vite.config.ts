@@ -8,6 +8,34 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
+  build: {
+    // Performance optimizations for production build
+    rollupOptions: {
+      output: {
+        // Obfuscate chunk names for security
+        chunkFileNames: 'assets/[name]-[hash].js',
+        entryFileNames: 'assets/[name]-[hash].js',
+        assetFileNames: 'assets/[name]-[hash].[ext]',
+        // Optimize chunk splitting
+        manualChunks: {
+          vendor: ['react', 'react-dom'],
+          lucide: ['lucide-react']
+        }
+      },
+    },
+    // Enable source map for debugging but consider disabling in production
+    sourcemap: false,
+    // Optimize build size
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: true,
+        drop_debugger: true,
+      },
+    },
+    // Enable code splitting
+    codeSplit: true,
+  },
   server: {
     // Security configurations for development server
     headers: {
@@ -20,18 +48,5 @@ export default defineConfig({
     fs: {
       strict: true,
     },
-  },
-  build: {
-    // Security configurations for production build
-    rollupOptions: {
-      output: {
-        // Obfuscate chunk names for security
-        chunkFileNames: 'assets/[name]-[hash].js',
-        entryFileNames: 'assets/[name]-[hash].js',
-        assetFileNames: 'assets/[name]-[hash].[ext]',
-      },
-    },
-    // Enable source map for debugging but consider disabling in production
-    sourcemap: false,
   },
 });
