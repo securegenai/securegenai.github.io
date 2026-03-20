@@ -2,6 +2,202 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Enhanced Animations */
+.hero-gradient {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Enhanced hover effects */
+.card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Button animations */
+.btn-primary {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.btn-primary:hover::before {
+  left: 100%;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(16, 185, 129, 0.3);
+}
+
+/* Image hover effects */
+.image-hover {
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.image-hover:hover {
+  transform: scale(1.05);
+}
+
+/* Fade in animations */
+.fade-in {
+  animation: fadeIn 0.8s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Staggered animations */
+.stagger-children > * {
+  animation: fadeInUp 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.stagger-children > *:nth-child(1) { animation-delay: 0.1s; }
+.stagger-children > *:nth-child(2) { animation-delay: 0.2s; }
+.stagger-children > *:nth-child(3) { animation-delay: 0.3s; }
+.stagger-children > *:nth-child(4) { animation-delay: 0.4s; }
+.stagger-children > *:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Loading skeleton animation */
+.skeleton {
+  background: linear-gradient(90deg, #f3f4f6 25%, #e5e7eb 50%, #f3f4f6 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Enhanced focus styles */
+.focus-ring:focus {
+  outline: 2px solid #10b981;
+  outline-offset: 2px;
+}
+
+/* Mobile-friendly animations */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Touch-friendly mobile navigation */
+@media (max-width: 768px) {
+  .mobile-nav {
+    min-height: 44px;
+    min-width: 44px;
+    padding: 12px;
+  }
+  
+  .mobile-nav a {
+    padding: 16px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .mobile-nav button {
+    min-height: 44px;
+    min-width: 44px;
+    padding: 12px;
+  }
+  
+  .mobile-menu {
+    padding: 20px;
+  }
+  
+  .mobile-menu a {
+    padding: 16px 20px;
+    font-size: 18px;
+    min-height: 48px;
+  }
+  
+  .tap-target {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  .mobile-button {
+    padding: 16px 24px;
+    font-size: 16px;
+    min-height: 48px;
+  }
+}
+
+/* Enhanced touch feedback */
+@media (pointer: coarse) {
+  .btn-primary,
+  .card-hover,
+  button,
+  a {
+    -webkit-tap-highlight-color: rgba(16, 185, 129, 0.1);
+  }
+  
+  .btn-primary:active,
+  .card-hover:active {
+    transform: scale(0.98);
+    transition: transform 0.1s ease;
+  }
+}
+
+/* Improved mobile focus styles */
+@media (max-width: 768px) {
+  .focus-ring:focus {
+    outline: 3px solid #10b981;
+    outline-offset: 2px;
+  }
+  
+  .mobile-focus:focus {
+    background-color: rgba(16, 185, 129, 0.1);
+  }
+}
+
 @layer utilities {
   .animate-fade-in {
     animation: fade-in 0.5s ease-in-out;
