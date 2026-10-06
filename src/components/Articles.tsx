@@ -1,122 +1,78 @@
-import { Calendar, Clock, ArrowRight } from 'lucide-react';
+import { ArrowRight, CalendarDays } from 'lucide-react';
+import q3ReportCover from '../images/q3-2026-cover.png';
 
-const Articles = () => {
-  const articles = [
-    {
-      title: "Available: Q2 2025",
-      excerpt: "Update the threat landscape.",
-      date: "July, 01 2025",
-      readTime: "4 min read",
-      image: "https://substackcdn.com/image/fetch/$s_!8ZHk!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F68b93298-809a-4923-96b7-f0f895364269_1464x1056.png",
-      category: "Security",
-      url: "https://securedgenai.substack.com/p/available-q2-2025-report"
-    },
-    {
-      title: "Review: Threat Modeling for Agentic AI",
-      excerpt: "Introducing 7 layer MAESTRO.",
-      date: "June 08, 2025",
-      readTime: "7 min read",
-      image: "https://substackcdn.com/image/fetch/$s_!EWrP!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7f3d465a-3a00-499e-b816-9d8d622b6d44_812x462.png",
-      category: "Implementation",
-      url: "https://securedgenai.substack.com/p/review-threat-modeling-for-agentic"
-    },
-    {
-      title: "Review: Agentic AI security",
-      excerpt: "A Simple Walk through of Agentic AI Architecture.",
-      date: "January 1, 2025",
-      readTime: "7 min read",
-      image: "https://substackcdn.com/image/fetch/$s_!Qnjy!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F843cd9c0-2077-4ae1-a7c1-079ee8032097_1101x727.png",
-      category: "Regulation",
-      url: "https://securedgenai.substack.com/p/review-agentic-ai-security"
-    }
-  ];
-
-  return (
-    <section id="articles" className="py-20 bg-gray-50">
-      <div className="max-w-6xl mx-auto px-4">
-        <div className="text-center mb-16 fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+const Articles = () => (
+  <section id="articles" className="bg-[#f5f7f5] py-16 sm:py-20 lg:py-24">
+    <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div className="flex flex-col gap-5 sm:gap-6 md:flex-row md:items-end md:justify-between">
+        <div className="max-w-2xl">
+          <p className="mb-3 text-xs font-bold uppercase tracking-[0.18em] text-[#363737] sm:text-sm">
+            Latest release
+          </p>
+          <h2 className="text-3xl font-bold tracking-tight text-gray-950 sm:text-4xl lg:text-5xl">
             Latest Safety Intelligence
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Cutting-edge research and analysis on emerging GenAI security threats, vulnerabilities, and defense strategies from leading experts worldwide.
+          <p className="mt-4 max-w-xl text-base leading-relaxed text-gray-600 sm:text-lg">
+            A field guide to Q3 AI safety and security, organized around boundaries, scale, and response.
           </p>
         </div>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 stagger-children">
-          {articles.map((article, index) => (
-            <a
-              key={index}
-              href={article.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`Read article: ${article.title} - ${article.excerpt}`}
-              className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group cursor-pointer block card-hover"
-            >
-              <div className="relative overflow-hidden">
-                <picture>
-                  <source 
-                    srcSet={article.image.replace('.png', '.webp')} 
-                    type="image/webp"
-                  />
-                  <img
-                    src={article.image}
-                    alt={article.title}
-                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300 image-hover"
-                    loading="lazy"
-                    decoding="async"
-                    width="400"
-                    height="192"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  />
-                </picture>
-                <div className="absolute top-4 left-4">
-                  <span className="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-medium">
-                    {article.category}
-                  </span>
-                </div>
-              </div>
-
-              <div className="p-6">
-                <div className="flex items-center text-sm text-gray-500 mb-3">
-                  <Calendar className="w-4 h-4 mr-2" />
-                  <span className="mr-4">{article.date}</span>
-                  <Clock className="w-4 h-4 mr-2" />
-                  <span>{article.readTime}</span>
-                </div>
-
-                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors duration-200">
-                  {article.title}
-                </h3>
-
-                <p className="text-gray-600 mb-4 leading-relaxed">
-                  {article.excerpt}
-                </p>
-
-                <div className="flex items-center text-green-500 font-semibold group-hover:text-green-600 transition-colors duration-200">
-                  <span className="mr-2">Read More</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
-                </div>
-              </div>
-            </a>
-          ))}
-        </div>
-
-        <div className="text-center mt-12">
-          <a
-            href="https://securedgenai.substack.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="View all intelligence reports on Secure GenAI Substack"
-            className="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-200 inline-flex items-center gap-2 group"
-          >
-            View All Intelligence Reports
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
-          </a>
+        <div className="flex items-center gap-2 text-sm font-semibold text-gray-500 md:mb-1">
+          <CalendarDays className="h-4 w-4 text-brand-muted" aria-hidden="true" />
+          <span>October 1, 2026</span>
         </div>
       </div>
-    </section>
-  );
-};
+
+      <a
+        href="https://q3y2026.vercel.app/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Read GenAI Safety and Security Q3 2026, the latest Secure GenAI special report"
+        className="group mt-9 grid overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-black/5 transition-shadow duration-300 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-muted focus-visible:ring-offset-4 md:mt-12 md:grid-cols-[0.9fr_1.1fr]"
+      >
+        <div className="relative aspect-square overflow-hidden bg-[#f8f6ed] sm:aspect-[4/3] md:aspect-auto md:min-h-[360px] lg:min-h-[440px]">
+          <img
+            src={q3ReportCover}
+            alt="GenAI Safety & Security Q3 2026 report cover, featuring a golden eagle"
+            className="h-full w-full object-contain p-5 transition-transform duration-500 group-hover:scale-[1.025] sm:p-8 md:p-10"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+
+        <div className="flex min-w-0 flex-col justify-center p-6 sm:p-8 lg:p-12">
+          <span className="mb-4 inline-flex w-fit items-center rounded-full bg-brand-mint px-3 py-1 text-xs font-bold uppercase tracking-wide text-brand-ink sm:text-sm">
+            Special report · Q3 2026
+          </span>
+          <h3 className="max-w-xl text-2xl font-bold leading-tight tracking-tight text-gray-950 sm:text-3xl lg:text-4xl">
+            GenAI Safety &amp; Security
+          </h3>
+          <p className="mt-4 max-w-xl text-base leading-relaxed text-gray-600 sm:text-lg">
+            The illustrated executive edition brings together field reporting and source figures on evaluation boundaries, risks that spread through shared systems, and incident response.
+          </p>
+
+          <dl className="mt-7 grid grid-cols-3 gap-3 border-t border-gray-200 pt-5 sm:mt-8 sm:gap-5 sm:pt-6">
+            <div>
+              <dt className="text-2xl font-bold tracking-tight text-gray-950 sm:text-3xl">65</dt>
+              <dd className="mt-1 text-xs leading-snug text-gray-500 sm:text-sm">field notes</dd>
+            </div>
+            <div>
+              <dt className="text-2xl font-bold tracking-tight text-gray-950 sm:text-3xl">11</dt>
+              <dd className="mt-1 text-xs leading-snug text-gray-500 sm:text-sm">source figures</dd>
+            </div>
+            <div>
+              <dt className="text-2xl font-bold tracking-tight text-gray-950 sm:text-3xl">3</dt>
+              <dd className="mt-1 text-xs leading-snug text-gray-500 sm:text-sm">report themes</dd>
+            </div>
+          </dl>
+
+          <span className="mt-7 inline-flex min-h-12 w-fit items-center justify-center gap-2 rounded-lg bg-brand-mint px-5 py-3 text-sm font-semibold text-brand-ink transition-colors group-hover:bg-brand-hover sm:mt-8 sm:text-base">
+            Read the special report
+            <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true" />
+          </span>
+        </div>
+      </a>
+    </div>
+  </section>
+);
 
 export default Articles;

@@ -6,8 +6,8 @@ const FAQ = () => {
 
   const faqs = [
     {
-      question: "How often will I the newsletter updates?",
-      answer: "Secure GenAI is delivered every Monday morning with the latest threat intelligence, research findings, and security updates."
+      question: "How often is the newsletter published?",
+      answer: "Secure GenAI is delivered every Tuesday with the latest threat intelligence, research findings, and security updates."
     },
     {
       question: "Is this newsletter free for researchers and practitioners?",
@@ -61,7 +61,7 @@ const FAQ = () => {
                   {faq.question}
                 </h3>
                 {openIndex === index ? (
-                  <ChevronUp className="w-5 h-5 text-green-500 flex-shrink-0" />
+                  <ChevronUp className="w-5 h-5 text-brand-muted flex-shrink-0" />
                 ) : (
                   <ChevronDown className="w-5 h-5 text-gray-400 flex-shrink-0" />
                 )}

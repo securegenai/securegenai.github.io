@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Shield, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -19,10 +19,8 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <a href="#home" className="flex items-center space-x-2 text-xl font-bold text-gray-900 hover:text-green-600 transition-colors duration-200">
-              <div className="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold">SG</span>
-              </div>
+            <a href="#home" className="flex items-center space-x-2 text-xl font-bold text-gray-900 hover:text-brand-ink transition-colors duration-200">
+              <div className="h-8 w-8 rounded-lg bg-brand-mint" aria-hidden="true" />
               <span>Secure GenAI</span>
             </a>
           </div>
@@ -34,14 +32,14 @@ const Navigation = () => {
                 key={item.name}
                 href={item.href}
                 aria-label={`Navigate to ${item.name} section`}
-                className="text-gray-800 hover:text-green-500 font-medium transition-colors duration-200 mobile-focus focus-ring"
+                className="text-gray-800 hover:text-brand-ink font-medium transition-colors duration-200 mobile-focus focus-ring"
               >
                 {item.name}
               </a>
             ))}
             <button 
               aria-label="Subscribe to Secure GenAI newsletter"
-              className="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-lg font-semibold transition-all duration-200 btn-primary mobile-button"
+              className="bg-brand-mint hover:bg-brand-hover text-brand-ink px-6 py-2 rounded-lg font-semibold transition-all duration-200 btn-primary mobile-button"
             >
               Subscribe
             </button>
@@ -52,7 +50,7 @@ const Navigation = () => {
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
-              className="text-gray-800 hover:text-green-500 transition-colors duration-200 tap-target"
+              className="text-gray-800 hover:text-brand-ink transition-colors duration-200 tap-target"
             >
               {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -68,7 +66,7 @@ const Navigation = () => {
                   key={item.name}
                   href={item.href}
                   aria-label={`Navigate to ${item.name} section`}
-                  className="text-gray-700 hover:text-green-500 font-medium transition-colors duration-200 py-2 mobile-focus focus-ring"
+                  className="text-gray-700 hover:text-brand-ink font-medium transition-colors duration-200 py-2 mobile-focus focus-ring"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
@@ -76,7 +74,7 @@ const Navigation = () => {
               ))}
               <button 
                 aria-label="Subscribe to Secure GenAI newsletter"
-                className="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-lg font-semibold transition-all duration-200 w-full btn-primary mobile-button"
+                className="bg-brand-mint hover:bg-brand-hover text-brand-ink px-6 py-2 rounded-lg font-semibold transition-all duration-200 w-full btn-primary mobile-button"
               >
                 Subscribe
               </button>

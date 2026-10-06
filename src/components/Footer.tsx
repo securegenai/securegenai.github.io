@@ -5,7 +5,7 @@ const Footer = () => {
     <footer aria-label="Site footer" id="contact" className="bg-gray-900 text-white py-12">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center">
-          <div className="inline-flex items-center justify-center w-12 h-12 bg-green-500 rounded-full mb-6">
+          <div className="inline-flex items-center justify-center w-12 h-12 bg-brand-mint rounded-full mb-6">
             {/* <Shield className="w-6 h-6" /> */}
           </div>
           

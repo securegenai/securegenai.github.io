@@ -15,13 +15,6 @@ const Hero = () => {
   return (
     <section id="home" className="min-h-screen flex items-center justify-center hero-gradient px-4 pt-16">
       <div className="max-w-4xl mx-auto text-center fade-in">
-        <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-8 animate-fade-in">
-          Secure GenAI
-        </h1>
-        <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto animate-fade-in">
-          Your weekly source for GenAI security & safety intelligence
-        </p>
-        
         {/* Loading placeholder */}
         <div className="subscription-box mb-8 flex justify-center min-h-[240px] items-center animate-fade-in">
           {loadIframe ? (

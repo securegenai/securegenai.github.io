@@ -2,17 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Enhanced Animations */
-.hero-gradient {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  background-size: 400% 400%;
-  animation: gradientShift 15s ease infinite;
+:root {
+  --brand-mint: #00f56a;
+  --brand-mint-hover: #00f56a;
+  --brand-green-muted: #00f56a;
+  --brand-ink: #363737;
+  --brand-pale: #00f56a;
 }
 
-@keyframes gradientShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+/* Enhanced Animations */
+.hero-gradient {
+  background: #ffffff;
 }
 
 /* Smooth scroll behavior */
@@ -32,7 +32,8 @@ html {
 
 /* Button animations */
 .btn-primary {
-  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  background: var(--brand-mint);
+  color: var(--brand-ink);
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
@@ -54,8 +55,9 @@ html {
 }
 
 .btn-primary:hover {
+  background: var(--brand-mint-hover);
   transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(16, 185, 129, 0.3);
+  box-shadow: 0 10px 20px rgba(54, 55, 55, 0.12);
 }
 
 /* Image hover effects */
@@ -114,7 +116,7 @@ html {
 
 /* Enhanced focus styles */
 .focus-ring:focus {
-  outline: 2px solid #10b981;
+  outline: 2px solid var(--brand-green-muted);
   outline-offset: 2px;
 }
 
@@ -176,7 +178,7 @@ html {
   .card-hover,
   button,
   a {
-    -webkit-tap-highlight-color: rgba(16, 185, 129, 0.1);
+    -webkit-tap-highlight-color: rgba(0, 245, 106, 0.2);
   }
   
   .btn-primary:active,
@@ -189,12 +191,12 @@ html {
 /* Improved mobile focus styles */
 @media (max-width: 768px) {
   .focus-ring:focus {
-    outline: 3px solid #10b981;
+    outline: 3px solid var(--brand-green-muted);
     outline-offset: 2px;
   }
   
   .mobile-focus:focus {
-    background-color: rgba(16, 185, 129, 0.1);
+    background-color: rgba(0, 245, 106, 0.2);
   }
 }
 

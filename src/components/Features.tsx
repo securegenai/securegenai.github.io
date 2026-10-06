@@ -30,11 +30,8 @@ const Features = () => {
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Weekly newsletter
+            What you’ll find
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Short. Concise. To the point.
-          </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -43,8 +40,8 @@ const Features = () => {
               key={index}
               className="text-center group hover:transform hover:scale-105 transition-all duration-300"
             >
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-6 group-hover:bg-green-200 transition-colors duration-300">
-                <feature.icon className="w-8 h-8 text-green-500" />
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-brand-pale rounded-full mb-6 group-hover:bg-brand-mint transition-colors duration-300">
+                <feature.icon className="w-8 h-8 text-brand-ink" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-4">
                 {feature.title}
